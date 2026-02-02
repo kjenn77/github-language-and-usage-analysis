@@ -20,9 +20,9 @@ CREATE OR REPLACE TABLE github-analysis-486123.github_data.summary_stats AS
   # Create a CTE of repository information, unnesting languages
   , repo_langs AS (
     SELECT 
-      repo_name, 
-      l.name AS language_name, 
-      l.bytes
+      repo_name 
+      , l.name AS language_name
+      , l.bytes
     FROM bigquery-public-data.github_repos.languages
     , UNNEST(language) AS l
   )
@@ -38,4 +38,5 @@ CREATE OR REPLACE TABLE github-analysis-486123.github_data.summary_stats AS
   FROM base_commits bc
   JOIN repo_langs rl 
     ON bc.repo_name = rl.repo_name
+
   GROUP BY 1, 2, 3, 4;
