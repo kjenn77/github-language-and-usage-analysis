@@ -11,7 +11,9 @@ SELECT
       ELSE 'Heavy'
     END AS engagement_level
 FROM (
-  SELECT committer.name as committer_name, COUNT(*) AS total_commits
+  SELECT
+    committer.name AS committer_name
+    , COUNT(*) AS total_commits
   FROM bigquery-public-data.github_repos.commits
   WHERE TIMESTAMP_SECONDS(committer.date.seconds) BETWEEN '2017-11-01' AND '2022-11-30'
   GROUP BY 1
