@@ -1,4 +1,4 @@
-# GitHub Analysis of Programming Languages and User Engagement
+# GitHub Programming Language Evolution and Contributor Dynamics
 ## Project Overview
 Analyse popular and trending programming languages and user engagement on GitHub.
 
@@ -18,7 +18,7 @@ Analyse popular and trending programming languages and user engagement on GitHub
 * Creating visualisations: **Google Looker Studio**
 * Documentation and displaying results: **Microsoft Word**
 
-## Notes
-* Data from 01-Nov-2017 until 31-Nov-2017 (5 years) was extracted from github_repos due to the following findings:
-  * Initial investigation showed that November 2022 was the last month with valid and significant data.
-  * github_repos has over 3TB of data and BigQuery on the free trial only allows processing usage up to 1TB.
+## Project Structure
+* **/sql-queries/:** Contains SQL queries used to clean, analyse, and prepare data for creating visualisations on BigQuery.
+* **github_analysis_dashboard:** Dashboard for this project, created on Google Looker Studio.
+* **GitHub Analysis Report:** Documentation on the entire project.
